@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Add Student</h1>
+	<form th:action="@{/saveemployee}" th:object="${employee}" method="POST">
+		<div>
+			<input type="hidden"  name="id" th:value="${employee.id}">
+			
+		
+			<label for="name">Employee Name:</label><br>
+			<input type="text" placeholder="enter Employee name" name="name" th:field="*{name}">
+			<span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+			
+			<br>
+			
+			<label for="department">Enter department:</label><br>
+			<input type="text" placeholder="enter your department" name="department" th:field="*{department}">
+			<span th:if="${#fields.hasErrors('department')}" th:errors="*{department}"></span>
+			
+			<br>
+			
+			<label for="position">Enter position:</label><br>
+			<input type="text" placeholder="enter your position" name="position" th:field="*{position}">
+			<span th:if="${#fields.hasErrors('position')}" th:errors="*{position}"></span>
+			
+			<br>
+			
+			
+			<label for="contact">Enter contact:</label><br>
+			<input type="text" placeholder="enter your contact" name="contact" th:field="*{contact}">
+			<span th:if="${#fields.hasErrors('contact')}" th:errors="*{contact}"></span>
+			
+			<br>
+			
+			
+		
+			<input type="submit" id="button">
+			
+		</div>
+	</form>
+</body>
+
+</body>
+</html>

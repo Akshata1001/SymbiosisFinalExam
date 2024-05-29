@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Task Project</title>
+</head>
+<body>
+<h1>Add Task</h1>
+	<form th:action="@{/savetask}" th:object="${task}" method="POST">
+		<div>
+			<input type="hidden"  name="id" th:value="${task.id}">
+			
+			<label for="title">Task title:</label><br>
+			<input type="text" placeholder="enter title name" name="title" th:field="*{title}">
+			<span th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span>
+		
+			
+			<br>
+			
+			
+			<label for="description">Enter description:</label><br>
+			<input type="text" placeholder="enter your description" name="description" th:field="*{description}">
+			<span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span>
+			
+			<br>
+			
+			<label for="dueDate">Enter dueDate:</label><br>
+			<input type="Date" placeholder="enter your dueDate" name="dueDate" th:field="*{dueDate}">
+			<span th:if="${#fields.hasErrors('dueDate')}" th:errors="*{dueDate}"></span>
+			
+			<br>
+			
+			
+			<label for="status">Enter status:</label><br>
+			<input type="text" placeholder="enter your status" name="status" th:field="*{status}">
+			<span th:if="${#fields.hasErrors('status')}" th:errors="*{status}"></span>
+			
+			<br>
+			
+			
+		
+			<input type="submit" id="button">
+			
+		</div>
+	</form>
+</body>
+
+</body>
+</html>
+
+
